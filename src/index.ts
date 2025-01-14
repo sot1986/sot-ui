@@ -1,3 +1,4 @@
+import UiButton from './components/Button.vue'
 import UiCombobox from './components/Combobox/Index.vue'
 import UiComboboxLabel from './components/Combobox/Label.vue'
 import UiComboboxList from './components/Combobox/List.vue'
@@ -20,6 +21,10 @@ import UiRadioOptions from './components/Radio/Options.vue'
 import UiSelect from './components/Select/Index.vue'
 import UiSelectLabel from './components/Select/Label.vue'
 import UiSelectOption from './components/Select/Option.vue'
+import UiSliderBody from './components/Slider/Body.vue'
+import UiSliderHeader from './components/Slider/Header.vue'
+import UiSlider from './components/Slider/Index.vue'
+import UiSliderTitle from './components/Slider/Title.vue'
 import UiTextarea from './components/Textarea.vue'
 import useModal from './composables/useModal'
 import useSlider from './composables/useSlider'
@@ -30,6 +35,7 @@ import './style.css'
 export {
   mergeCss,
   noCss,
+  UiButton,
   UiCombobox,
   UiComboboxLabel,
   UiComboboxList,
@@ -52,6 +58,10 @@ export {
   UiSelect,
   UiSelectLabel,
   UiSelectOption,
+  UiSlider,
+  UiSliderBody,
+  UiSliderHeader,
+  UiSliderTitle,
   UiTextarea,
   useModal,
   useSlider,
