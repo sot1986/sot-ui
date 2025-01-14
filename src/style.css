@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-field: theme('colors.gray.800');
+    --color-text-label: theme('colors.gray.800');
+    --color-text-option: theme('colors.gray.800');
+    --color-label-required-marker: theme('colors.red.600');
+    --color-option-field: theme('colors.gray.800');
+    --color-text-option-focus: theme('colors.indigo.600');
+    --color-helper-field: theme('colors.gray.500');
+    --color-placeholder-field: theme('colors.gray.400');
+    --color-bg-field: theme('colors.white');
+    --color-bg-outline-field: theme('colors.gray.200');
+    --color-bg-disabled-field: theme('colors.gray.100');
+    --color-bg-checked-field: theme('colors.indigo.600');
+    --color-ring-field: theme('colors.gray.300');
+    --color-ring-focus-field: theme('colors.indigo.600');
+    --color-border-field: theme('colors.gray.300');
+    --color-border-focus-field: theme('colors.indigo.600');
+    --color-border-disabled-field: theme('colors.gray.200');
+    --color-border-checked-field: theme('colors.indigo.600');
+    --color-outline-field: theme('colors.gray.300');
+    --color-outline-focus-field: theme('colors.indigo.600');
+  }
+
+  .field-error {
+    --color-text-field: theme('colors.red.600');
+    --color-placeholder-field: theme('colors.red.400');
+    --color-ring-field: theme('colors.red.500');
+    --color-ring-focus-field: theme('colors.red.600');
+    --color-border-field: theme('colors.red.500');
+    --color-border-focus-field: theme('colors.red.600');
+    --color-helper-field: theme('colors.red.700');
+  }
+}
