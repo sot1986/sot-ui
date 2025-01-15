@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { DialogTitle } from '@headlessui/vue'
 
-
 defineOptions({
   name: 'SliderHeader',
   inheritAttrs: false,
@@ -33,9 +32,8 @@ defineProps({
           <span class="absolute -inset-2.5" />
           <span class="sr-only">Close panel</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-</svg>
-
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
         </button>
       </div>
     </div>

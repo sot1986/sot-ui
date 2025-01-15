@@ -1,4 +1,5 @@
 import UiButton from './components/Button.vue'
+import UiCheckbox from './components/Checkbox.vue'
 import UiCombobox from './components/Combobox/Index.vue'
 import UiComboboxLabel from './components/Combobox/Label.vue'
 import UiComboboxList from './components/Combobox/List.vue'
@@ -10,6 +11,8 @@ import UiFieldHelper from './components/Field/Helper.vue'
 import UiField from './components/Field/Index.vue'
 import UiFormActions from './components/Form/Actions.vue'
 import UiForm from './components/Form/Index.vue'
+import UiInput from './components/Input.vue'
+import UiLabel from './components/Label.vue'
 import UiModalActions from './components/Modal/Actions.vue'
 import UiModalDescription from './components/Modal/Description.vue'
 import UiModal from './components/Modal/Index.vue'
@@ -36,6 +39,7 @@ export {
   mergeCss,
   noCss,
   UiButton,
+  UiCheckbox,
   UiCombobox,
   UiComboboxLabel,
   UiComboboxList,
@@ -47,6 +51,8 @@ export {
   UiFieldHelper,
   UiForm,
   UiFormActions,
+  UiInput,
+  UiLabel,
   UiModal,
   UiModalActions,
   UiModalDescription,
