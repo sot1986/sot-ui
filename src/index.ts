@@ -29,15 +29,15 @@ import UiSliderHeader from './components/Slider/Header.vue'
 import UiSlider from './components/Slider/Index.vue'
 import UiSliderTitle from './components/Slider/Title.vue'
 import UiTextarea from './components/Textarea.vue'
-import useModal from './composables/useModal'
-import useSlider from './composables/useSlider'
-import useSortTable from './composables/useSortTable'
-import { mergeCss, noCss } from './Utils/twMerge'
+
 import './style.css'
 
+export * as useModal from './composables/useModal'
+export * as useSlider from './composables/useSlider'
+export * as useSortTable from './composables/useSortTable'
+export { mergeCss, noCss } from './Utils/twMerge'
+
 export {
-  mergeCss,
-  noCss,
   UiButton,
   UiCheckbox,
   UiCombobox,
@@ -69,7 +69,4 @@ export {
   UiSliderHeader,
   UiSliderTitle,
   UiTextarea,
-  useModal,
-  useSlider,
-  useSortTable,
 }

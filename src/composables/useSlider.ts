@@ -12,7 +12,7 @@ export default function<T>(
     open?: (value: T) => void | Promise<void>
     close?: () => void | Promise<void>
   },
-) {
+): SliderI<T> {
   const slider = reactive({
     show: false,
     target: null as null | T,

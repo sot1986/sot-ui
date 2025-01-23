@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<{
     valid?: (key: string) => boolean
     invalid?: (key: string) => boolean
   }
+  injectKey?: string
 }>(), {
   novalidate: true,
   autocomplete: 'off',
@@ -29,8 +30,13 @@ onMounted(() => {
 
   el.value.querySelectorAll('[data-field]').forEach((e) => {
     const key = e.getAttribute('data-field')
-    if (key)
-      keys.push(key)
+    if (!key)
+      return
+
+    keys.push(key)
+
+    if (props.injectKey)
+      e.setAttribute('data-form-key', props.injectKey)
   })
 })
 
