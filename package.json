@@ -1,7 +1,7 @@
 {
   "name": "sot-ui",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "description": "A Vue 3 UI library",
   "homepage": "https://github.com/sot1986/sot-ui",

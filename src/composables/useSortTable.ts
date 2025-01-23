@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 
-export default function<T extends string[]>(defaultSort: T[number]): {
+export default function useSortTable<T extends string[]>(defaultSort: T[number]): {
   sort: { value: T[number] }
   direction: { value: 'asc' | 'desc' }
   sortBy: (field: T[number]) => void

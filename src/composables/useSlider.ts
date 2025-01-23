@@ -7,7 +7,7 @@ export interface SliderI<T> {
   close: () => Promise<void>
 }
 
-export default function<T>(
+export default function useSlider<T>(
   cb?: {
     open?: (value: T) => void | Promise<void>
     close?: () => void | Promise<void>
