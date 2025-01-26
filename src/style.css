@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
   :root {
     --color-text-field: theme('colors.gray.800');
     --color-text-label: theme('colors.gray.800');

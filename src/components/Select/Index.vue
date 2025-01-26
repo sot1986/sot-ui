@@ -5,11 +5,13 @@ import {
   ListboxOptions,
 } from '@headlessui/vue'
 import { ref } from 'vue'
+import { mergeCss, noCss } from '../../Utils/twMerge'
 import UiFieldHelper from '../Field/Helper.vue'
 import UiSelectLabel from './Label.vue'
 
 defineOptions({
   name: 'Combobox',
+  inheritAttrs: false,
 })
 
 const props = withDefaults(defineProps<{
@@ -19,6 +21,12 @@ const props = withDefaults(defineProps<{
   as?: string
   helper?: string
   queryAtFirstEnter?: boolean
+  defaultValue?: T
+  by?: T extends object ? keyof T : undefined
+  disabled?: boolean
+  multiple?: boolean
+  name?: string
+  horizontal?: boolean
 }>(), {
   as: 'div',
   queryAtFirstEnter: false,
@@ -42,7 +50,13 @@ function queryOnFirstEnter(e: FocusEvent) {
 <template>
   <Listbox
     :model-value="(modelValue as any)"
-    :as="as" @update:model-value="$emit('update:modelValue', $event)"
+    :as="as"
+    :by="by"
+    :disabled
+    :multiple
+    :name
+    :horizontal
+    @update:model-value="$emit('update:modelValue', $event)"
   >
     <template v-if="label">
       <UiSelectLabel>{{ label }}</UiSelectLabel>
@@ -50,12 +64,12 @@ function queryOnFirstEnter(e: FocusEvent) {
 
     <div class="relative mt-2">
       <ListboxButton
-        class="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-skin-base-field shadow-sm ring-1 ring-inset ring-skin-base-field focus:ring-2 focus:ring-inset placeholder:text-skin-placeholder-field focus:ring-skin-focus-field sm:text-sm sm:leading-6 min-h-9"
+        :class="mergeCss('w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-skin-base-field shadow-sm ring-1 ring-inset ring-skin-base-field focus:ring-2 focus:ring-inset placeholder:text-skin-placeholder-field focus:ring-skin-focus-field sm:text-sm sm:leading-6 min-h-9 text-left', $attrs)"
         data-control
-        v-bind="$attrs"
+        v-bind="noCss($attrs)"
         @focus="queryOnFirstEnter"
       >
-        <span class="block truncate pr-8">
+        <span class="block truncate pr-8" :class="mergeCss('text-left', $attrs)">
           <slot />
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -72,7 +86,7 @@ function queryOnFirstEnter(e: FocusEvent) {
       </transition>
     </div>
 
-    <UiFieldHelper v-if="helper" class="mt-2" :error>
+    <UiFieldHelper v-if="helper || error" class="mt-2" :error>
       {{ helper }}
     </UiFieldHelper>
   </Listbox>
